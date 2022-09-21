@@ -2,9 +2,16 @@
   <span>Employees</span>
 </header>
 <div class="content">
-  <div *ngFor="let employee of employees">
-      <div>{{ employee.firstName }}</div>
-      <div>{{ employee.lastName }}</div>
-      <div>{{ employee.position }}</div>
+  <div> active </div>
+  <input type="checkbox" (click)="setActive()">
+
+  <div *ngFor="let employee of filter(employees)"  >
+    <div class="employee" [ngClass]="employee.position === 'MANAGER' ? 'green' : 'default' ">
+      <div (click)="goTo()" >
+        {{ employee.firstName }}
+       {{ employee.lastName }}
+       {{ employee.position }}
+      </div>
+    </div>
   </div>
 </div>

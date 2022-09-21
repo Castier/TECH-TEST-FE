@@ -15,7 +15,8 @@ import {MatFormFieldModule} from "@angular/material/form-field";
 
 @NgModule({
   declarations: [AppComponent, LoginComponent, EmployeesComponent, EmployeeDetailsComponent],
-  imports: [BrowserModule, AppRoutingModule, BrowserAnimationsModule, MatInputModule, ReactiveFormsModule, HttpClientModule, MatFormFieldModule],
+  imports: [BrowserModule, AppRoutingModule, BrowserAnimationsModule,
+    MatInputModule, ReactiveFormsModule, HttpClientModule, MatFormFieldModule],
   providers: [EmployeeService],
   bootstrap: [AppComponent]
 })

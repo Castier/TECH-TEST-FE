@@ -18,7 +18,7 @@ export class LoginComponent implements OnInit {
   login() {
     if(this.password.valid && this.username.valid )
     {
-      this.router.navigate(['/employees'])
+      this.router.navigate(['/employees']);
     }
     else
     {
