@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {FormControl, Validators} from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -6,11 +8,21 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
-  constructor() {}
+  constructor(private router : Router) {}
 
   ngOnInit(): void {}
 
+  password = new FormControl('', [Validators.required, Validators.min(8)]);
+  username = new FormControl('', [Validators.required, Validators.max(8)]);
+
   login() {
-    console.log('login clicked...');
+    if(this.password.valid && this.username.valid )
+    {
+      this.router.navigate(['/employees'])
+    }
+    else
+    {
+      console.log('Not valid');
+    }
   }
 }

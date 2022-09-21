@@ -1,10 +1,18 @@
 <header>
-  <span>Login</span>
+  <span id="titre">Login</span>
 </header>
+<form>
 <div class="content">
-  <input placeholder="username" />
-  <input placeholder="password" />
+  <mat-form-field appearance="fill" >
+  <input placeholder="username" required max="8" [formControl]="username"/>
+  </mat-form-field>
+  <mat-error></mat-error>
+  <mat-form-field appearance="fill">
+  <input placeholder="password" required max="8" [formControl]="password"/>
+  </mat-form-field>
+  <mat-error></mat-error>
 </div>
 <footer>
   <button (click)="login()">login</button>
 </footer>
+</form>
